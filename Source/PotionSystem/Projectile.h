@@ -32,4 +32,7 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UProjectileMovementComponent* ProjectileMovement;
+
+	//
+	void FireInDirection(const FVector& ShootDirection);
 };
