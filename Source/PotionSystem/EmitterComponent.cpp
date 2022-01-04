@@ -10,7 +10,7 @@ UEmitterComponent::UEmitterComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
-	// ...
+	ProjectileClass = AProjectile::StaticClass();
 }
 
 
@@ -39,10 +39,11 @@ void UEmitterComponent::Fire()
 
 void UEmitterComponent::SpawnProjectile()
 {
+	AActor* owner = GetOwner();
+
 	FVector location = GetComponentLocation();
 	FRotator rotation = GetComponentRotation();
 	FActorSpawnParameters spawnParameters;
-	AActor* owner = GetOwner();
 	spawnParameters.Owner = owner;
 	spawnParameters.Instigator = owner->GetInstigator();
 

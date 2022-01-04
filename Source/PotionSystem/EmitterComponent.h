@@ -16,7 +16,7 @@ public:
 	// Sets default values for this component's properties
 	UEmitterComponent();
 
-	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
 	TSubclassOf<class AProjectile> ProjectileClass;
 
 protected:
