@@ -47,6 +47,6 @@ void UEmitterComponent::SpawnProjectile()
 	spawnParameters.Owner = owner;
 	spawnParameters.Instigator = owner->GetInstigator();
 
-	GetWorld()->SpawnActor<AProjectile>(ProjectileClass, location, rotation);
+	AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, location, rotation);
 }
 
