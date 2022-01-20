@@ -33,6 +33,9 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	class UProjectileMovementComponent* ProjectileMovement;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UParticleSystemComponent* SpellEffect;
+
 	//
 	void FireInDirection(const FVector& ShootDirection);
 };

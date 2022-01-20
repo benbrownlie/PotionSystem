@@ -24,9 +24,4 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-		UParticleSystem* Effect;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-		UMaterial* Material;
 };

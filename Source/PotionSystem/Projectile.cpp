@@ -3,6 +3,7 @@
 
 #include "Projectile.h"
 #include "Components/SphereComponent.h"
+#include "Particles/ParticleSystemComponent.h"
 #include "GameFramework/ProjectileMovementComponent.h"
 
 // Sets default values
@@ -24,6 +25,8 @@ AProjectile::AProjectile()
 	ProjectileMovement->InitialSpeed = 2000.0f;
 	ProjectileMovement->MaxSpeed = 2000.0f;
 	ProjectileMovement->ProjectileGravityScale = 0.0f;
+
+	SpellEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SpellEffect"));
 }
 
 // Called when the game starts or when spawned
