@@ -21,12 +21,13 @@ AProjectile::AProjectile()
 	Mesh->SetCollisionProfileName(TEXT("NoCollision"));
 	Mesh->SetupAttachment(RootComponent);
 
+	SpellEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SpellEffect"));
+	SpellEffect->SetupAttachment(RootComponent);
+
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 	ProjectileMovement->InitialSpeed = 2000.0f;
 	ProjectileMovement->MaxSpeed = 2000.0f;
 	ProjectileMovement->ProjectileGravityScale = 0.0f;
-
-	SpellEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SpellEffect"));
 }
 
 // Called when the game starts or when spawned
