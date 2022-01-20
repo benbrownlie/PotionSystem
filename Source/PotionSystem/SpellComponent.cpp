@@ -10,6 +10,7 @@ USpellComponent::USpellComponent()
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
 
+	// ...
 }
 
 
@@ -18,7 +19,8 @@ void USpellComponent::BeginPlay()
 {
 	Super::BeginPlay();
 
-
+	// ...
+	
 }
 
 
@@ -27,6 +29,6 @@ void USpellComponent::TickComponent(float DeltaTime, ELevelTick TickType, FActor
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 
-
+	// ...
 }
 

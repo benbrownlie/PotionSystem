@@ -3,7 +3,6 @@
 #pragma once
 
 #include "CoreMinimal.h"
-#include "Projectile.h"
 #include "Components/ActorComponent.h"
 #include "SpellComponent.generated.h"
 
@@ -16,12 +15,6 @@ class POTIONSYSTEM_API USpellComponent : public UActorComponent
 public:	
 	// Sets default values for this component's properties
 	USpellComponent();
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-	TSubclassOf<AProjectile> ProjectileClass;
-
-	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite)
-
 
 protected:
 	// Called when the game starts
