@@ -14,16 +14,20 @@ AProjectile::AProjectile()
 
 	SetReplicates(true);
 
+	//The collider for the projectile that other properties will be attached to
 	Collider = CreateDefaultSubobject<USphereComponent>(TEXT("Collider"));
 	RootComponent = Collider;
 
+	//The mesh for the projectile, attaches it to the Collider/RootComponent
 	Mesh = CreateDefaultSubobject<UStaticMeshComponent>(TEXT("Mesh"));
 	Mesh->SetCollisionProfileName(TEXT("NoCollision"));
 	Mesh->SetupAttachment(RootComponent);
 
+	//The effect that will be applied to the spell
 	SpellEffect = CreateDefaultSubobject<UParticleSystemComponent>(TEXT("SpellEffect"));
 	SpellEffect->SetupAttachment(RootComponent);
 
+	//Creates the projectiles movement and sets its speed
 	ProjectileMovement = CreateDefaultSubobject<UProjectileMovementComponent>(TEXT("ProjectileMovement"));
 	ProjectileMovement->InitialSpeed = 2000.0f;
 	ProjectileMovement->MaxSpeed = 2000.0f;

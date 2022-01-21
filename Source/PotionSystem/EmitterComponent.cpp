@@ -39,14 +39,17 @@ void UEmitterComponent::Fire()
 
 void UEmitterComponent::SpawnProjectile()
 {
+	//Gets the actor that the script is applied to
 	AActor* owner = GetOwner();
 
+	//Sets the variables to the current location and rotation of the component
 	FVector location = GetComponentLocation();
 	FRotator rotation = GetComponentRotation();
 	FActorSpawnParameters spawnParameters;
 	spawnParameters.Owner = owner;
 	spawnParameters.Instigator = owner->GetInstigator();
 
+	//Spawns the projectile into the world
 	AProjectile* projectile = GetWorld()->SpawnActor<AProjectile>(ProjectileClass, location, rotation);
 }
 
